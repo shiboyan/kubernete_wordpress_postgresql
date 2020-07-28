@@ -1,0 +1,1 @@
+cat list |awk '{printf ("%s %s, ",$1,$2)}END{print " "}'|sed s/bigint\(20\)/"bigserial PRIMARY KEY"/|sed s/bigint\(20\)/bigserial/g|sed s/datetime/date/g|sed s/longtext/text/g|sed s/int\(11\)/integer/g|sed s/tinytext/text/g|sed s/mediumtext/text/g|sed s/bigint\(10\)/bigserial/g|sed s/," ".$//g|awk '{print "create table wp_users ("$0");"}'

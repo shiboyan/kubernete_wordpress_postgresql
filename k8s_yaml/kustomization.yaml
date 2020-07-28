@@ -1,0 +1,7 @@
+secretGenerator:
+- name: postgresql-pass
+  literals:
+  - password=A_PASSWORD
+resources:
+  - postgresql-deployment.yaml
+  - wordpress-deployment.yaml
